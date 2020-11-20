@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
 	<head>
 		<!-- Required meta tags -->
 		<meta charset="utf-8">
@@ -48,16 +49,16 @@
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-					<a class="nav-link" href="#">About me</a>
+					<a class="nav-link" href="{% static 'AboutMe.txt' %}">About me</a>
                 </li>
 				<li class="nav-item">
-					<a class="nav-link active" href="home/">Home</a>
+					<a class="nav-link active" href="{% url 'home' %}">Home</a>
 				</li>
                 <li class="nav-item">
-                  <a class="nav-link" href="posts/">Blog</a>
+                  <a class="nav-link" href="{% url 'showblog' %}">Blog</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">VK</a>
+                  <a class="nav-link" target="_blank" rel="noopener noreferrer" href="https://vk.com/timoteeei">VK</a>
                 </li>
               </ul>
             </div>
@@ -70,7 +71,9 @@
 			<div class="container">
 			  <p class="lead text-muted">Hello there! I'm excited to see you here! You can write me right now</p>
 			  <p>
-				<a class="btn btn-primary my-2" href="mailto:t.shulgin@annasoft.ru">Mail me!</a>
+				<a class="btn btn-primary my-2" href="mailto:t.shulgin@annasoft.ru">Mail me!</a><br/>
+
+				  <img src="{% static 'GoldenRatio.jpg' %}">
 			  </p>
 			</div>
 		  </section>

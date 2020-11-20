@@ -13,7 +13,7 @@
 		  integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
 		  rel="stylesheet">
 
-	<title>Newbie's blog page</title>
+	<title>{{post_detail.title}}</title>
 
 	<!-- Bootstrap core CSS -->
 
@@ -65,29 +65,21 @@
 	</nav>
 </header>
 
-<h1 class="pt-4">Test. Blog page is working</h1>
-
 <div class="album py-5 pl-3 bg-light">
-	<div class="container">
-
-		<div class="column">
-
-			{% for post in posts %}
-			<div class="col-md-6">
-				<div class="card mb-4 pl-3 pr-3 pt-3 pb-3 shadow-sm">
-					<a href="{% url 'post_details' post.id %} "><h2 class="card-text">{{post.title}}</h2></a> <br/>
-					<p class="card-text">{{post.date}}</p>
-					<img class="card-img-top" width="700" src="{{post.image.url}}" />
-					<div class="card-body">
-						<p class="card-text">{{post.get_summary}}</p>
-					</div>
-					<br/>
-					<br/>
-				</div>
-			</div>
-			{% endfor %}
-		</div>
-	</div>
+    <div class="container">
+        <div class="col-md-11">
+            <div class="card mb-4 pl-3 pr-3 pt-3 pb-3 shadow-sm">
+                <a href=""><h2 class="card-text">{{post_detail.title}}</h2></a> <br/>
+                <p class="card-text">{{post_detail.date}}</p>
+                <img class="card-img-top" width="700" src="{{post_detail.image.url}}" />
+                <div class="card-body">
+                    <p class="card-text">{{post_detail.text}}</p>
+                </div>
+                <br/>
+                <br/>
+            </div>
+        </div>
+    </div>
 </div>
 
 </body>
